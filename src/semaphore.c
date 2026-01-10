@@ -7,13 +7,11 @@ void sem_init(semaphore *s, int value) {
 void sem_wait(semaphore *s) {
     int expected;
     
-    while (1) {
+    for (;;) {
         expected = atomic_load(&s->count);
         
-        if (expected > 0) {
-            if (atomic_compare_exchange_strong(&s->count, &expected, expected - 1)) {
-                break;
-            }
+        if (expected > 0 && atomic_compare_exchange_strong(&s->count, &expected, expected - 1)) {
+            return;
         }
     }
 }
