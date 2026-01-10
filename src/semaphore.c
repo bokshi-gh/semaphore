@@ -9,10 +9,7 @@ void sem_wait(semaphore *s) {
     
     for (;;) {
         expected = atomic_load(&s->count);
-        
-        if (expected > 0 && atomic_compare_exchange_strong(&s->count, &expected, expected - 1)) {
-            return;
-        }
+        if (expected > 0 && atomic_compare_exchange_strong(&s->count, &expected, expected - 1)) return;
     }
 }
 
