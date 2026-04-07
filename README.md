@@ -1,4 +1,4 @@
-# Mutex
+# Semaphore
 
 A [Semaphore](https://en.wikipedia.org/wiki/Semaphore_(programming)) implementation in C.
 
