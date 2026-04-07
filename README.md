@@ -6,7 +6,6 @@ A [Semaphore](https://en.wikipedia.org/wiki/Semaphore_(programming)) implementat
 
 Check the following files:
 
-- `include/semaphore.h` - Struct defination and function declarations.
+- `include/semaphore.h` - Struct defination and function declarations
 - `src/semaphore.c` - Function implementations
-- `src/main.c` - Example code demonstrating how to use the `semaphore` struct and functions.
-
+- [`examples/semaphore_demo.c`](examples/semaphore_demo.c) - Example code demonstrating how to use the `semaphore` struct and functions
